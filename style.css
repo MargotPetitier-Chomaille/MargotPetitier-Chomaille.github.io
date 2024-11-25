@@ -41,7 +41,6 @@ img{
 
   font-family: "Epilogue", sans-serif;
   font-size: 30px;
-
   border-bottom: 4pt solid #2647a4;
   text-decoration: none;
   }
@@ -74,6 +73,7 @@ h1, h2 {
 
 h1 {
   font-size: 43px;
+  font-size: clamp(10px, 5vw, 43px);
   text-align: left;
   padding-right: 2fr;
   padding-left: 1%;
@@ -87,6 +87,7 @@ h1 a {
 
 h2 a{
   font-size: 27px;
+  font-size: clamp(5px, 5vw, 27px);
   text-decoration: none; 
   color: #2647a4;
   text-align: right;
@@ -152,6 +153,12 @@ color: rgb(0, 95, 124);
   padding: 24px;
   justify-content: center;
   margin: 0;
+}
+
+@media (max-width: 768px){
+  .projets{
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .projet{
@@ -282,19 +289,33 @@ color: rgb(0, 95, 124);
   position: relative;
 }
 
+@media (max-width: 768px){
+  .page-projet{
+    grid-template-columns: 1fr;
+  }
+}
+
 .page-projet img{
   max-width: 100%;
   max-height: 100%;
   padding: 0pt;
-  border: 0pt;
   margin-bottom: 0px;
   object-fit: scale-down; 
+  margin: 0px;
+  border-radius: 35px;
 }
 
-.image-container{
+.image-container-1{
   display: grid;
   align-self: start;
-  gap: 15px;
+  padding: 0px;
+  justify-content: center;
+  margin-bottom: 0px;
+}
+
+.image-container-2{
+  display: grid;
+  align-self: start;
   padding: 0px;
   justify-content: center;
   margin-bottom: 0px;
@@ -310,17 +331,26 @@ color: rgb(0, 95, 124);
   padding: 0px;
   justify-content: center;
   margin-bottom: 0px;
+  margin-left: 0px;
+  margin: 20px;
+
+  padding: 30px; 
+  border: 3px solid #2de8b6;  
+  border-radius: 60px;  
+  display: inline-block;
 }
 
 .page-projet h3{
 font-size: 30px;
-  color: #2de8b6;
+font-size: clamp(15px, 5vw, 30px);
+  color: #2647a4;
   margin: 0px;
-  margin-left: 30px;
+  margin-left: 20px;
 }
 
 .page-projet h4{
   font-size: 20px;
+  font-size: clamp(5px, 5vw, 20px);
   color: #959595;
   padding: 0px;
   padding-top: 10px;
@@ -331,6 +361,7 @@ font-size: 30px;
 
 .page-projet h5{
   font-size: 16px;
+  font-size: clamp(5px, 5vw, 16px);
   color: #bdbdbd;
   padding: 0px;
   padding-top: 0px;
@@ -341,13 +372,48 @@ font-size: 30px;
 
 .page-projet p{
   font-size: 17px;
+  font-size: clamp(10px, 5vw, 17px);
   color: #959595;
   padding: 0px;
   padding-top: 20px;
-  padding-bottom: 80px;
+  padding-bottom: 20px;
   margin: 0px;
   margin-left: 30px;
 }
+
+
+.main-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Deux colonnes égales */
+  gap: 0px; /* Espacement entre les colonnes */
+  /* background-color: #f4f4f4; */ /* Optionnel : couleur pour visualiser */
+  width: 100%;
+}
+
+/* Chaque sous-colonne */
+.sub-column {
+  display: flex; /* Flexbox pour centrer ou ajuster les contenus */
+  justify-content: flex-end;
+  align-items: flex-end;
+  /* background-color: #e8e8e8; */ /* Optionnel : couleur pour visualiser */
+  padding: 5px;
+  margin: 0px; 
+  object-fit: scale-down;
+}
+
+/* Les images à l'intérieur */
+.image-container-1 img,
+.image-container-2 img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: scale-down; /* Garantit que l'image reste proportionnée */
+  margin: 0px;
+  padding: 10px;
+  align-items: flex-end;
+}
+
+
+
 
 .projet-data{
   align-self: end; /* pour aligner les éléments en bas dans la grille parent !!! */
@@ -365,7 +431,7 @@ font-size: 30px;
   line-height: 3em;
 }
 
-@media (min-width: 960px){
+@media (min-width: 768px){
   .xl{
     grid-column: span 2;
   }
@@ -377,32 +443,26 @@ font-size: 30px;
   grid-auto-flow: row dense; /* pour boucher les trous*/
 }
 
-/* fx javascript */
-.projet{
-  /* transition: opacity  0.8s ease;
-} 
-.projet.unactive{
-  opacity: 0.5;
-  /* filter: grayscale(1); 
-  z-index: -1; */
-}
 
 .page-a-propos{
+  display: grid;
   margin: 0 auto;
   margin-right: 15%;
   background: #ffffff;
-  grid-template-columns: repeat(auto-fill, minmax(320px,480px));
+  grid-template-columns: 1fr ; 
   gap: 0px;
   padding: 24px;
+  margin: 30px;
   justify-content: center;
-  border-radius: 0px;
+  border-radius: 50px;
+  border: 4px solid #2de8b6;
   box-shadow: 0 0 0px rgba(0,0,0,0.1);
   margin-bottom: 0px;
 }
 
 .page-a-propos h3{
   font-size: 30px;
-  color: #2de8b6;
+  color: #2647a4;
   padding: 0px;
   padding-top: 50px;
   padding-bottom: 50px;
@@ -417,5 +477,4 @@ font-size: 30px;
   padding-bottom: 80px;
   margin: 0px;
 }
-
 
