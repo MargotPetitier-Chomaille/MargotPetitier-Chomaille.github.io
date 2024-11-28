@@ -222,10 +222,10 @@ color: rgb(0, 95, 124);
 
 
 .projets .projet:nth-last-of-type(7) img {
-  border: 3pt solid #fb0000;
+  border: 3pt solid #043690;
 }
 .projets .projet:nth-last-of-type(7) img:hover {
-  background-color: #fb0000;
+  background-color: #043690;
 }
 
 
@@ -302,7 +302,7 @@ color: rgb(0, 95, 124);
   margin-bottom: 0px;
   object-fit: scale-down; 
   margin: 0px;
-  border-radius: 35px;
+  border-radius: 19px;
 }
 
 .image-container-1{
