@@ -4,28 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio Margot Petitier-Chomaille</title>
-  <!-- meta description -->
   <meta name="description" content="Portfolio de Margot Petitier-Chomaille, designer graphique.">
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@800&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
 </head>
 <body>
   <header class="header">
-     <nav class="header-container">
+    <nav class="header-container">
       <h2><a href="a-propos.html">À propos</a></h2>
-      <h1> <a href="index.html">Margot Petitier-Chomaille</a> <img src="svg/flèche4.svg" alt="flèche" width="30"></h1>
+      <h1><a href="index.html">Margot Petitier-Chomaille</a></h1>
       <div class="first-row">
-        <nav class="header-container"></nav>
-        
-        <h2> <a href="https://www.instagram.com/martgot.petitier/">Contact</a></h2>
+        <h2><a href="contact.html">Contact</a></h2>
       </div>
     </nav>
   </header>
@@ -33,28 +26,82 @@
   <div class="page-projet">
     <div class="main-column">
       <div class="sub-column">
-      <div class="image-container-1">
-        <img src="../img/creatura/creatura01.jpg" alt="couverture magazine">
-        <img src="../img/creatura/creatura03.jpeg" alt="simurgh">
-        <img src="../img/creatura/creatura05.jpeg" alt="double page sur les dragons">
+        <div class="image-container-1">
+          <!-- Modales basées sur des checkboxes -->
+          <label for="modal1">
+            <img src="../img/creatura/creatura01.jpg" alt="couverture magazine">
+          </label>
+          <input type="checkbox" id="modal1" class="modal-checkbox">
+          <div class="modal">
+            <label for="modal1" class="close">
+              <img src="svg/fleche2.svg" alt="fleche">
+            </label>
+            <img src="../img/creatura/creatura01.jpg" alt="couverture magazine agrandie">
+          </div>
+
+          <label for="modal2">
+            <img src="../img/creatura/creatura03.jpeg" alt="simurgh">
+          </label>
+          <input type="checkbox" id="modal2" class="modal-checkbox">
+          <div class="modal">
+            <label for="modal2" class="close">
+              <img src="svg/fleche2.svg" alt="fleche">
+            </label>
+            <img src="../img/creatura/creatura03.jpeg" alt="simurgh agrandi">
+          </div>
+
+          <label for="modal3">
+            <img src="../img/creatura/creatura05.jpeg" alt="double page sur les dragons">
+          </label>
+          <input type="checkbox" id="modal3" class="modal-checkbox">
+          <div class="modal">
+            <label for="modal3" class="close">
+              <img src="svg/fleche2.svg" alt="fleche">
+            </label>
+            <img src="../img/creatura/creatura05.jpeg" alt="double page sur les dragons agrandie">
+          </div>
+        </div>
       </div>
-    </div>
       <div class="sub-column">
         <div class="image-container-2">
-          <img src="../img/creatura/creatura02.jpeg" alt="behemos">
-          <img src="../img/creatura/creatura04.jpeg" alt="double page zoom sur les dragons">
-          <img src="../img/creatura/creatura06.jpeg" alt="double page de texte">
+          <label for="modal4">
+            <img src="../img/creatura/creatura02.jpeg" alt="behemos">
+          </label>
+          <input type="checkbox" id="modal4" class="modal-checkbox">
+          <div class="modal">
+            <label for="modal4" class="close"><img src="svg/fleche2.svg" alt="fleche"></label>
+            <img src="../img/creatura/creatura02.jpeg" alt="behemos agrandi">
+          </div>
+
+          <label for="modal5">
+            <img src="../img/creatura/creatura04.jpeg" alt="double page zoom sur les dragons">
+          </label>
+          <input type="checkbox" id="modal5" class="modal-checkbox">
+          <div class="modal">
+            <label for="modal5" class="close"><img src="svg/fleche2.svg" alt="fleche"></label>
+            <img src="../img/creatura/creatura04.jpeg" alt="double page zoom sur les dragons agrandie">
+          </div>
+
+          <label for="modal6">
+            <img src="../img/creatura/creatura06.jpeg" alt="double page de texte">
+          </label>
+          <input type="checkbox" id="modal6" class="modal-checkbox">
+          <div class="modal">
+            <label for="modal6" class="close"><img src="svg/fleche2.svg" alt="fleche"></label>
+            <img src="../img/creatura/creatura06.jpeg" alt="double page de texte agrandie">
+          </div>
         </div>
       </div>
     </div>
 
-        <div class="text-container">
-          <h3>Creatura</h3>
-          <h4>2024</h4>
-          <h5>18x21,5 cm</h5>
-          <h5>nb de pages</h5>
-          <p>Création d'un magazine fictif sur les créatures imaginaires issues des différents mythes et légendes du monde entier.</p>
-          <p>Le magazine se compose de plusieurs rubriques : un édito, un répertoire des créatures imaginaires, un zoom sur certaines d'entre elles, les créatures imaginaires dans la culture populaire, les références des images ainsi qu'un index. </p>
-          </div>
-      </div>
-      </body>
+    <div class="text-container">
+      <h3>Creatura</h3>
+      <h4>2024</h4>
+      <h5>18×21,5 cm</h5>
+      <h5>nb de pages</h5>
+      <p>Création d'un magazine fictif sur les créatures imaginaires issues des différents mythes et légendes du monde entier.</p>
+      <p>Le magazine se compose de plusieurs rubriques : un édito, un répertoire des créatures imaginaires, un zoom sur certaines d'entre elles, les créatures imaginaires dans la culture populaire, les références des images ainsi qu'un index.</p>
+    </div>
+  </div>
+</body>
+</html>

@@ -3,36 +3,121 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Invasion</title>
-  <link rel="stylesheet" href="../style.css">
+  <title>Portfolio Margot Petitier-Chomaille</title>
+  <!-- meta description -->
+  <meta name="description" content="Portfolio de Margot Petitier-Chomaille, designer graphique.">
+  <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
 </head>
+<body>
 
 <body>
-  <header class="header"> 
-    <nav class="header-container">
-      <h1>Margot Petitier-Chomaille</h1>
+  <header class="header">
+    <!-- https://jenseign.com/le-h1-logo/ -->
+     <!-- <h1>Margot</h1>
+     <h1>Petitier-Chomaille</h1> -->
+    
+     <nav class="header-container">
+      <h2><a href="a-propos.html">À propos</a></h2>
+      <h1><a href="index.html">Margot Petitier-Chomaille</a></h1>
       <div class="first-row">
-        <h2><a href="http://127.0.0.1:3000/index.html">Accueil</a></h2>
-        <h2><a href="a-propos.html">À propos</a></h2>
-        <h2> <a href="contact">Contact</a></h2>
-        <h2> <a href="https://www.instagram.com/martgot.petitier/">Instagram</a></h2>
+        <nav class="header-container"></nav>
+        
+        <h2> <a href="contact.html">Contact</a></h2>
       </div>
     </nav>
   </header>
 
   <div class="page-projet">
-<div class="image-container">
-    <img src="../img/algue-vignette-copie.png" alt="algue">
-    <img src="../img/0035_31 copiegrandemoyenne.png" alt="test">
-  </div>
-    <div class="text-container">
-    <h3>Invasion</h3>
-    <h4>2023</h4>
-    <p>Les algues prennent le dessus, envahissant espaces et objets rendant l'environnement hostile.</p>
+    <div class="main-column">
+      <div class="sub-column">
+      <div class="image-container-1">
+        <label for="modal1">
+          <img src="../img/algues/algue-01.jpeg" alt="Photographie algue">
+        </label>
+        <input type="checkbox" id="modal1" class="modal-checkbox">
+        <div class="modal">
+          <label for="modal1" class="close"><img src="svg/fleche2.svg" alt="fleche"></label>
+          <img src="../img/algues/algue-01.jpeg" alt="Photographie algue agrandie">
+        </div>
+
+        <label for="modal2">
+          <img src="../img/algues/algue-04.jpeg" alt="Photographie algue alimentaire">
+        </label>
+        <input type="checkbox" id="modal2" class="modal-checkbox">
+        <div class="modal">
+          <label for="modal2" class="close"><img src="svg/fleche2.svg" alt="fleche"></label>
+          <img src="../img/algues/algue-04.jpeg" alt="Photographie algue alimentaire agrandie">
+        </div>
+
+        <label for="modal6">
+          <img src="../img/algues/algue-07.jpeg" alt="Produit de nettoyage recouvert d'algues">
+        </label>
+        <input type="checkbox" id="modal6" class="modal-checkbox">
+        <div class="modal">
+          <label for="modal6" class="close"><img src="svg/fleche2.svg" alt="fleche"></label>
+          <img src="../img/algues/algue-07.jpeg" alt="Produit de nettoyage recouvert d'algues agrandi">
+        </div>
+      </div>
+    </div>
+
+
+      <div class="sub-column">
+        <div class="image-container-2">
+          <label for="modal3">
+            <img src="../img/algues/algue-02.jpeg" alt="Photographie algue">
+          </label>
+          <input type="checkbox" id="modal3" class="modal-checkbox">
+          <div class="modal">
+            <label for="modal3" class="close"><img src="svg/fleche2.svg" alt="fleche"></label>
+            <img src="../img/algues/algue-02.jpeg" alt="Photographie algue">
+          </div>
+
+          <label for="modal4">
+            <img src="../img/algues/algue-06.jpeg" alt="Papier toilette recouvert d'algues">
+          </label>
+          <input type="checkbox" id="modal4" class="modal-checkbox">
+          <div class="modal">
+            <label for="modal4" class="close"><img src="svg/fleche2.svg" alt="fleche"></label>
+            <img src="../img/algues/algue-06.jpeg" alt="Papier toilette recouvert d'algues agrandi">
+          </div>
+          <label for="modal5">
+            <img src="../img/algues/algue-05.jpeg" alt="Lampe recouverte d'algues">
+          </label>
+          <input type="checkbox" id="modal5" class="modal-checkbox">
+          <div class="modal">
+            <label for="modal5" class="close"><img src="svg/fleche2.svg" alt="fleche"></label>
+            <img src="../img/algues/algue-05.jpeg" alt="Lampe recouverte d'algue agrandie">
+          </div>
+          
+        </div>
+      </div>
+      <label for="modal7">
+        <video src="../img/algues/algue-video.mp4" class="video-container" poster="../img/algues/video-algue-vignette.jpeg" controls></video>
+      </label>
+      <input type="checkbox" id="modal7" class="modal-checkbox">
+      <div class="modal">
+        <label for="modal7" class="close"><img src="svg/fleche2.svg" alt="fleche"></label>
+        <video src="../img/algues/algue-video.mp4"></video>
+      </div>
     </div>
     
-  </div>
-  </body>
+
+
+        <div class="text-container">
+          <h3>Invasion</h3>
+          <h4>2023</h4>
+          <h5>Photographies</h5>
+          <h5>Stop motion</h5>
+          <p>Dans un monde apocalyptique, les algues prennent le dessus sur les humains, envahissant espaces, lieux de vies et objets du quotidien, rendant l'environnement hostile.</p>
+          </div>
+      </div>
+      </body>

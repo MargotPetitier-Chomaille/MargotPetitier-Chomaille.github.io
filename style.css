@@ -1,7 +1,7 @@
 *{
     box-sizing: border-box; /* pour que les padding et margin ne modifient pas la taille de l'élément */ 
     text-decoration: none;  
-    background-color: #ffffff;
+    background-color: none;
 
 } 
 
@@ -15,11 +15,6 @@ body{
       font-style: normal;
       font-optical-sizing: auto;
     }
-
-    /* font-variation-settings: "wght" 500; pour ls fonts variable */ 
-    margin: 0; /* pour éviter les marges par défaut du navigateur */
-    line-height: 1.5;/* hauteur de ligne pour la lecture à l'écran */ 
-
 
 
 img{
@@ -92,10 +87,6 @@ h2 a{
   color: #2647a4;
   text-align: right;
   padding-right: 20px
-  :hover {
-  color: #ff79ff72; 
-  }
-
 } 
 
 .header h1{
@@ -125,11 +116,6 @@ h2 a{
   display: flex;
   gap:0 24px ;
 }
-
-/* .header-nav a{
-color: rgb(0, 95, 124);
-  text-decoration: none;
-} */
 
 .header-container a:hover {
   background: #2de8b6;
@@ -268,6 +254,84 @@ color: rgb(0, 95, 124);
 }
 
 
+/* Styles pour la modale */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal img {
+  max-width: 90% !important;
+  max-height: 90% !important;
+  display: block;
+  position: relative;
+  border-radius: 0% !important;
+}
+
+.modal img .page-projet3 {
+  max-width: 90vw;  
+  max-height: 90vh; 
+  object-fit: contain; 
+  transition: transform 0.3s ease; 
+}
+
+.modal .page-projet3{
+  display: none; /* Masque la modale par défaut */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Fond sombre */
+  justify-content: center;
+  align-items: center;
+}
+
+
+.modal-content {
+  display: inline-block;
+  position: relative; /* Nécessaire pour positionner la croix par rapport à ce conteneur */
+  width: fit-content; /* Ajuste la largeur en fonction de l'image */
+  height: fit-content; /* Ajuste la hauteur en fonction de l'image */
+}
+
+.close img{
+  width: 100px;  /* Assurez-vous qu'elle a une taille appropriée */
+  height: 100px; /* Assurez-vous qu'elle a une hauteur appropriée */
+  display: inline-block;
+  cursor: pointer;
+}
+
+.modal .close {
+  position: absolute;
+  top: 80px;
+  right: 40px; 
+  font-size: 70px;
+  font-weight: 200;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  z-index: 100;
+}
+
+.modal-checkbox {
+  display: none;
+}
+
+/* Affiche la modale quand la checkbox est cochée */
+.modal-checkbox:checked + .modal {
+  display: flex;
+}
+
 .page-projet{
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -296,6 +360,56 @@ color: rgb(0, 95, 124);
   grid-column: span 2; /* Fusionne toutes les images en une seule colonne */
 }
 
+.page-projet3 .main-column {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) 1fr; 
+  gap: 0px; 
+  margin: 24px;
+  background: #fff;
+  padding: 0px;
+  justify-content: center;
+  margin-bottom: 0px;
+  position: relative;
+}
+
+/* Les colonnes pour les images */
+.page-projet3 .sub-column {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr); /* 3 lignes pour les images */
+  gap: 0; /* Espacement entre les images */
+  margin: 0;
+  padding: 0;
+}
+
+.page-projet3 img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: scale-down; /* Garantit que l'image reste proportionnée */
+  margin: 0px;
+  padding: 0px;
+  border-radius: 19px;
+}
+
+/* Le texte prend la 4ème colonne */
+.page-projet3 .text-container {
+  display: block;
+  align-self: start;
+  position: sticky;
+  top : 10px;
+  width: 80%;
+  gap: 0px;
+  padding: 0px;
+  justify-content: center;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin: 20px;
+
+  padding: 30px; 
+  border: 3px solid #2de8b6;  
+  border-radius: 60px;  
+  display: inline-block;
+}
+
 @media (max-width: 768px){
   .page-projet{
     grid-template-columns: 1fr;
@@ -310,6 +424,7 @@ color: rgb(0, 95, 124);
   object-fit: scale-down; 
   margin: 0px;
   border-radius: 19px;
+  cursor: pointer;
 }
 
 .image-container-1{
@@ -318,9 +433,19 @@ color: rgb(0, 95, 124);
   padding: 0px;
   justify-content: center;
   margin-bottom: 0px;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .image-container-2{
+  display: grid;
+  align-self: start;
+  padding: 0px;
+  justify-content: center;
+  margin-bottom: 0px;
+}
+
+.image-container-3{
   display: grid;
   align-self: start;
   padding: 0px;
@@ -357,8 +482,27 @@ font-size: clamp(15px, 5vw, 30px);
   margin-left: 20px;
 }
 
+.page-projet3 h3{
+  font-size: 30px;
+  font-size: clamp(15px, 5vw, 30px);
+    color: #2647a4;
+    margin: 0px;
+    margin-left: 20px;
+  }
+
 
 .page-projet h4{
+  font-size: 20px;
+  font-size: clamp(5px, 5vw, 20px);
+  color: #959595;
+  padding: 0px;
+  padding-top: 10px;
+  padding-bottom: 0px;
+  margin: 0px;
+  margin-left: 30px;
+}
+
+.page-projet3 h4{
   font-size: 20px;
   font-size: clamp(5px, 5vw, 20px);
   color: #959595;
@@ -380,7 +524,33 @@ font-size: clamp(15px, 5vw, 30px);
   margin-left: 30px;
 }
 
+.page-projet3 h5{
+  font-size: 16px;
+  font-size: clamp(5px, 5vw, 16px);
+  color: #bdbdbd;
+  padding: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin: 0px;
+  margin-left: 30px;
+}
+
 .page-projet p{
+  font-family: "Epilogue", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal; 
+  font-size: 16px;
+  font-size: clamp(10px, 5vw, 16px);
+  color: #959595;
+  padding: 0px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin: 0px;
+  margin-left: 30px;
+}
+
+.page-projet3 p{
   font-family: "Epilogue", serif;
   font-optical-sizing: auto;
   font-weight: 600;
@@ -419,13 +589,23 @@ font-size: clamp(15px, 5vw, 30px);
 
 /* Les images à l'intérieur */
 .image-container-1 img,
-.image-container-2 img{
+.image-container-2 img,
+.image-container-3 img{
   max-width: 100%;
   max-height: 100%;
   object-fit: scale-down; /* Garantit que l'image reste proportionnée */
   margin: 0px;
   padding: 10px;
   align-items: flex-end;
+}
+.video-container{
+  max-width: 200%;
+  max-height: 200%;
+  object-fit: scale-down;
+  margin: 0px;
+  padding: 10px;
+  align-items: flex-end;
+  border-radius: 19px;
 }
 
 li{
@@ -443,6 +623,8 @@ li{
   margin: 0 0 20px 0 !important;
   padding: 0px !important;
 }
+
+
 
 .projet-data{
   align-self: end; /* pour aligner les éléments en bas dans la grille parent*/
@@ -536,3 +718,52 @@ li{
   margin: 0px;
 }
 
+
+.contact{
+  display: grid;
+  margin: 0 auto;
+  background: #ffffff;
+  grid-template-columns: 1fr ; 
+  gap: 0px;
+  padding: 24px;
+  margin: 0px;
+  justify-content: center;
+  margin-bottom: 0px;
+  width: 100%;
+}
+
+.contact .text-container{
+  border-radius: 50px;
+  border: 4px solid #2de8b6;
+  width: 100%;
+  margin: 0px;
+  margin-bottom: 30px;
+}
+
+.contact h3{
+  font-size: 22px;
+  font-size: clamp(15px, 5vw, 22px);
+  color: #2647a4;
+  padding: 0px;
+  padding-top: 5px;
+  padding-bottom: 35px;
+  margin: 0px;
+}
+
+.contact p{
+  font-size: 17px;
+  color: #959595;
+  padding: 0px;
+  padding-top: 5px;
+  padding-bottom: 12px;
+  margin: 0px;
+}
+
+.contact a{
+  text-decoration: none;
+  color: inherit;
+}
+
+.contact a:hover{
+  color: #2de8b6;
+}
