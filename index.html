@@ -16,7 +16,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+<link rel="icon" href="svg/favicon.svg" type="image/svg+xml">
 </head>
+<div id="top"></div>
 <body>
   <header class="header">
     <!-- https://jenseign.com/le-h1-logo/ -->
@@ -33,14 +35,13 @@
       </div>
     </nav>
   </header>
-
-
+ 
   <div class="projets">
     <a href="creatura.html" class="projet" data-color="#7f67b6">
       <img src="img/creatura-vignette.jpeg" alt="magazine sur les créatures imaginaires">
     </a>
     <a href="coffretmatisse.html" class="projet">
-      <img src="img/coffret-vignette.jpeg" alt="coffret henri matisse" data-color="7f27b6">
+      <img src="img/matisse-vignette.jpeg" alt="coffret Henri Matisse" data-color="7f27b6">
     </a>
     <a href="livres.html" class="projet">
       <img src="img/livres-vignette.jpg" alt="couverture alchimiste">
@@ -55,12 +56,38 @@
       <img src="img/poster-vignette.jpeg" alt="poster">
     </a>
     <a href="carnet-collage.html" class="projet">
-      <img src="img/carnetcollage-vignette.jpeg" alt="dessin issu de collage">
+      <img src="img/collage-vignette.jpeg" alt="dessin issu de collage">
     </a>
     <a href="algues.html" class="projet">
       <img src="img/algue-vignette.jpeg" alt="Algues">
     </a>
+    <a href="transparence.html" class="projet">
+      <img src="img/transparence-vignette.jpg" alt="photo portrait">
+    </a>
      </div>
-
+     <script>
+      // Lorsque l'utilisateur clique sur "Retour en haut" ou la flèche
+      document.querySelector('.retour-link').addEventListener('click', function(event) {
+        event.preventDefault(); // Empêche l'action par défaut (lien)
+        window.scrollTo({
+          top: 0, // Remonte tout en haut de la page
+          behavior: 'smooth' // Animation fluide
+        });
+      });
+    </script>
+    
 </body>
+<footer>
+  <div class="footer">
+    <div class="droits">
+    <p>© Tous droits réservés</p>
+   </div>
+   <div class="retour">
+    <p><a href="#" class="retour-link">Retour en haut <!-- <img class="bleu" src="svg/fleche5.svg" alt="flèche bleu vers le haut"> 
+    <img class="blanc" src="svg/fleche5blanc.svg" alt="flèche blanche vers le haut"> --></a></p>
+    </div>
+   </div>
+  </div>
 </html>
+
+
