@@ -3,23 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Invasion</title>
-  <link rel="stylesheet" href="../style.css">
+  <title>Portfolio Margot Petitier-Chomaille</title>
+  <!-- meta description -->
+  <meta name="description" content="Portfolio de Margot Petitier-Chomaille, designer graphique.">
+  <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
 <link rel="icon" href="svg/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@1,600&display=swap" rel="stylesheet">
 </head>
-
+<div id="top"></div>
 <body>
   <header class="header">
     <!-- https://jenseign.com/le-h1-logo/ -->
      <!-- <h1>Margot</h1>
      <h1>Petitier-Chomaille</h1> -->
     
-     <nav class="header-container">
+    <nav class="header-container">
       <h2><a href="a-propos.html">À propos</a></h2>
-      <h1><a href="index.html">Margot Petitier-Chomaille</a></h1>
+      <h1> <a href="index.html">Margot Petitier-Chomaille</a></h1>
       <div class="first-row">
         <nav class="header-container"></nav>
         
@@ -37,66 +48,87 @@
         </label>
         <input type="checkbox" id="modal1" class="modal-checkbox">
         <div class="modal">
+          <div class="modal-background"></div>
+            <div class="modal-content">
           <label for="modal1" class="close">&times;</label>
           <img src="livres/mouette01.jpeg" alt="Couverture et rabat agrandie">
         </div>
+      </div>
 
         <label for="modal2">
           <img src="livres/mouette03.jpeg" alt="Inserts">
         </label>
         <input type="checkbox" id="modal2" class="modal-checkbox">
         <div class="modal">
+          <div class="modal-background"></div>
+            <div class="modal-content">
           <label for="modal2" class="close">&times;</label>
           <img src="livres/mouette03.jpeg" alt="Inserts agrandis">
         </div>
+      </div>
 
         <label for="modal3">
           <img src="livres/alchimiste01.jpeg" alt="Couverture alchimiste">
         </label>
         <input type="checkbox" id="modal3" class="modal-checkbox">
         <div class="modal">
+          <div class="modal-background"></div>
+            <div class="modal-content">
           <label for="modal3" class="close">&times;</label>
           <img src="livres/alchimiste01.jpeg" alt="Couverture alchimiste agrandie">
         </div>
+      </div>
         
         <label for="modal4">
           <img src="livres/alchimiste02.jpeg" alt="couverture et bandeau">
         </label>
         <input type="checkbox" id="modal4" class="modal-checkbox">
         <div class="modal">
+          <div class="modal-background"></div>
+            <div class="modal-content">
           <label for="modal4" class="close">&times;</label>
           <img src="livres/alchimiste02.jpeg" alt="couverture et bandeau agrandis">
         </div>
+        </div>
       </div>
     </div>
+
       <div class="sub-column">
         <div class="image-container-2">
-
           <label for="modal5">
             <img src="livres/mouette02.jpeg" alt="Quatrième de couverture">
           </label>
           <input type="checkbox" id="modal5" class="modal-checkbox">
           <div class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-content">
             <label for="modal5" class="close">&times;</label>
             <img src="livres/mouette02.jpeg" alt="Quatrième de couverture agrandie">
           </div>
+        </div>
 
           <label for="modal6">
             <img src="livres/spoutnik01.jpeg" alt="couverture">
           </label>
           <input type="checkbox" id="modal6" class="modal-checkbox">
           <div class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-content">
             <label for="modal6" class="close">&times;</label>
             <img src="livres/spoutnik01.jpeg" alt="couverture agrandie">
           </div>
+        </div>
           
           <label for="modal7">
             <img src="livres/alichimiste03.jpeg" alt="dos">
           </label>
           <input type="checkbox" id="modal7" class="modal-checkbox">
           <div class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-content">
             <label for="modal7" class="close">&times;</label>
             <img src="livres/alichimiste03.jpeg" alt="dos agrandi">
+            </div>
           </div>
         </div>
       </div>
@@ -106,14 +138,37 @@
           <h3>Couvertures de livres</h3>
           <h4>2024</h4>
           <h5>
-            <li>L’histoire d'une mouette et du chat qui lui apprit à voler, Luis Sepulveda</li>
-            <li>Les Amants du Spoutnik, Haruki Murakami</li>   
-            <li>L’alchimiste, Paulo Coelho</li>
-    </h5>
+            <li><span class="italic">L’histoire d'une mouette et du chat qui lui apprit à voler</span>, Luis Sepulveda</li>
+            <li><span class="italic">Les Amants du Spoutnik</span>, Haruki Murakami</li>   
+            <li><span class="italic">L’alchimiste</span>, Paulo Coelho</li>
+          </h5>
+    
           <p>Réalisation de jaquettes fictives et d’inserts</p>
-          <p>L’histoire d’une mouette et du chat qui lui apprit à voler, Luis Sepulveda : c'est un livre destiné à un jeune public. J’ai ainsi choisi d'orienter cet objet vers l’illustration et le crayon de couleur. J’ai aussi été marqué par ce très long titre d’où le parti de l’accentuer également en le mettant sur la première et la quatrième de couverture. </p>
-          <p>Les Amants du Spoutnik, Haruki Murakami : Le principal élément que j’ai voulu faire ressortir est le flou, omniprésent dans le livre d'Haruki Murakami. Il est à la fois ressenti par les personnages et par le lecteur. C'est la raison pour laquelle j’ai fait le choix du calque. J’ai également mis en avant l’écrit, qui est au cœur de l’intrigue. </p>
-          <p>L’alchimiste, Paulo Coelho : Les moutons, point de départ du roman philosophique, ont selon moi une importance capitale dans l’intrigue. Ils sont la métaphore du confort qui empêche le personnage principal et donc les individus de réaliser leurs rêves.</p>
+          <p><span class="italic">L’histoire d’une mouette et du chat qui lui apprit à voler</span>, Luis Sepulveda : c'est un livre destiné à un jeune public. J’ai ainsi choisi d'orienter cet objet vers l’illustration et le crayon de couleur. J’ai aussi été marqué par ce très long titre d’où le parti de l’accentuer également en le mettant sur la première et la quatrième de couverture. </p>
+          <p><span class="italic">Les Amants du Spoutnik</span>, Haruki Murakami : Le principal élément que j’ai voulu faire ressortir est le flou, omniprésent dans le livre d'Haruki Murakami. Il est à la fois ressenti par les personnages et par le lecteur. C'est la raison pour laquelle j’ai fait le choix du calque. J’ai également mis en avant l’écrit, qui est au cœur de l’intrigue. </p>
+          <p><span class="italic">L’alchimiste</span>, Paulo Coelho : Les moutons, point de départ du roman philosophique, ont selon moi une importance capitale dans l’intrigue. Ils sont la métaphore du confort qui empêche le personnage principal et donc les individus de réaliser leurs rêves.</p>
           </div>
       </div>
+
+      <script>
+        // Attendre que le DOM soit complètement chargé avant d'exécuter le script
+        document.addEventListener('DOMContentLoaded', function() {
+          console.log("Le DOM est chargé !");
+          
+          const modalBackgrounds = document.querySelectorAll('.modal-background');
+          console.log("Modal backgrounds trouvés :", modalBackgrounds);
+          
+          modalBackgrounds.forEach(function(background) {
+            background.addEventListener('click', function() {
+              console.log("Fond cliqué !");
+              const modalCheckbox = background.closest('.modal').previousElementSibling;
+              if (modalCheckbox) {
+                modalCheckbox.checked = false;
+              }
+            });
+          });
+        });
+      </script>
+
       </body>
+</html>

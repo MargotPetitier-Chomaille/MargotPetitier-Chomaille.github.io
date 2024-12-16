@@ -16,16 +16,18 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+<link rel="icon" href="svg/favicon.svg" type="image/svg+xml">
 </head>
+<div id="top"></div>
 <body>
   <header class="header">
     <!-- https://jenseign.com/le-h1-logo/ -->
      <!-- <h1>Margot</h1>
      <h1>Petitier-Chomaille</h1> -->
     
-     <nav class="header-container">
+    <nav class="header-container">
       <h2><a href="a-propos.html">À propos</a></h2>
-      <h1><a href="index.html">Margot Petitier-Chomaille</a></h1>
+      <h1> <a href="index.html">Margot Petitier-Chomaille</a></h1>
       <div class="first-row">
         <nav class="header-container"></nav>
         
@@ -39,20 +41,26 @@
       <div class="sub-column">
       <div class="image-container-1">
         <label for="modal1">
-          <img src="../img/specimen/specimen01.jpeg" alt="carte de couverture du specimen">
+          <img src="specimen/specimen01.jpeg" alt="carte de couverture du specimen">
         </label>
         <input type="checkbox" id="modal1" class="modal-checkbox">
         <div class="modal">
-          <label for="modal1" class="close"><img src="svg/fleche2.svg" alt="fleche"></label>
-          <img src="../img/specimen/specimen01.jpeg" alt="carte de couverture du specimen agrandis">
+          <div class="modal-background"></div>
+            <div class="modal-content">
+          <label for="modal1" class="close">&times;</label>
+          <img src="specimen/specimen01.jpeg" alt="carte de couverture du specimen agrandis">
+        </div>
         </div>
         <label for="modal2">
-          <img src="../img/specimen/specimen02.jpeg" alt="carte specimen">
+          <img src="specimen/specimen02.jpeg" alt="carte specimen">
         </label>
         <input type="checkbox" id="modal2" class="modal-checkbox">
         <div class="modal">
-          <label for="modal2" class="close"><img src="svg/fleche2.svg" alt="fleche"></label>
-          <img src="../img/specimen/specimen02.jpeg" alt="carte specimen agrandis">
+          <div class="modal-background"></div>
+            <div class="modal-content">
+          <label for="modal2" class="close">&times;</label>
+          <img src="specimen/specimen02.jpeg" alt="carte specimen agrandis">
+        </div>
         </div>
        
       </div>
@@ -66,9 +74,30 @@
   <div class="text-container">
           <h3>Specimen typographique fictif</h3>
           <h4>2024</h4>
-          <h5>taille</h5>
-          <p>Création d'un specimen typographique fictif pour la typographie "Director" créée par Ange Degheest.</p>
-          <p>Ce specimen se présente sous forme de cartes pour permettre une manipulation plus libre du specimen, laissant la possibilité de disposer les cartes côtes à côtes afin de mieux observer les relations qu'entretiennent les différentes variantes qu'offre la typographie.  </p>
+          <h5>10×13,5×1,3 cm</h5>
+          <p>Création d’un spécimen typographique fictif pour la typographie “Director” créée par Ange Degheest.</p>
+          <p>Ce spécimen se présente sous forme de cartes pour permettre une manipulation plus libre du spécimen, laissant la possibilité de disposer les cartes côtes à côtes afin de mieux observer les relations qu’entretiennent les différentes variantes qu’offre la typographie. </p>
           </div>
       </div>
+
+      <script>
+        // Attendre que le DOM soit complètement chargé avant d'exécuter le script
+        document.addEventListener('DOMContentLoaded', function() {
+          console.log("Le DOM est chargé !");
+          
+          const modalBackgrounds = document.querySelectorAll('.modal-background');
+          console.log("Modal backgrounds trouvés :", modalBackgrounds);
+          
+          modalBackgrounds.forEach(function(background) {
+            background.addEventListener('click', function() {
+              console.log("Fond cliqué !");
+              const modalCheckbox = background.closest('.modal').previousElementSibling;
+              if (modalCheckbox) {
+                modalCheckbox.checked = false;
+              }
+            });
+          });
+        });
+      </script>
       </body>
+</html>
