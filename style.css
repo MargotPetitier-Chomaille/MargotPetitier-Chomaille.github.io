@@ -8,9 +8,9 @@ body{
     background-color: #ffffff;
     font-family: "Epilogue", sans-serif;
       margin: 0; /* pour éviter les marges par défaut du navigateur */
-    line-height: 1.5;/* hauteur de ligne pour la lecture à l'écran */ 
+    line-height: 1.5;
     font-optical-sizing: auto;
-      font-weight: 800;
+      font-weight: 800
       font-style: normal;
       font-optical-sizing: auto;
     }
@@ -63,7 +63,7 @@ img{
 }
 
 h1, h2 {
-  margin: 0;              /* Retire la marge par défaut des titres */
+  margin: 0;     
 }
 
 h1 {
@@ -132,17 +132,17 @@ h2 a{
   gap: 4vw;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 35px 35px;
+  padding: 20px 35px;
   background: #ffffff;
 }
 
 .droits {
   text-align: center;
-  align-items: center;
   font-size: clamp(10px, 5vw, 18px); 
   color: #2647a4;
   border: 3px solid #2de8b6;
   border-radius: 60px;
+  padding: 5px 50px;
   white-space: nowrap;
   width: fit-content;
   display: grid;
@@ -177,13 +177,6 @@ h2 a{
   gap: 8px;  /* Espacement entre le texte et l'image */
 }
 
-/* .retour img {
-  width: 80px;  
-  height: auto;  
-  display: inline-block;  
-  margin: 0px;  
-} */
-
 .retour-link {
   display: inline-flex; 
   align-items: center; 
@@ -203,25 +196,49 @@ h2 a{
   color: #ffffff;
 }
 
-/* Image dans le lien */
-/* .retour-link img {
-  width: 20px;
-  height: auto;
-  margin: 0; /* Enlève toute marge autour de l'image 
-  padding: 0px 0px;
-  position: absolute;
-} */
+@media (max-width: 768px) {
+  .footer {
+    grid-template-columns: 1fr 1fr;
+    font-size: clamp(10px, 4vw, 16px);
+  }
 
+  .droits {
+    font-size: clamp(10px, 4vw, 16px); 
+    justify-self: left; 
+  }
 
+  .footer .retour {
+    font-size: clamp(10px, 4vw, 16px);
+    justify-self: right; 
+  }
+}
+
+/* Taille d'écran petite */
+@media (max-width: 500px) {
+  .footer {
+    grid-template-columns: 1fr; 
+    gap: 1rem; 
+  }
+
+  .droits, .footer .retour {
+    grid-column: span 1; 
+    justify-self: center; 
+  }
+
+  .retour-link {
+    padding: 5px 10px; 
+    font-size: clamp(10px, 4vw, 14px); 
+  }
+
+  .droits {
+    grid-row: 2;
+    font-size: clamp(10px, 4vw, 14px);
+  }
+}
 
 .projets{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr ; /* auto-fit pour que le nombre d'éléments s'adaptent à la largeur du conteneur 
-  320px -> 1 élément
-  480px -> 2 éléments
-  720px -> 3 éléments
-  */
-  /* gap: 67px; */
+  grid-template-columns: 1fr 1fr 1fr ; 
   gap: 4vw;
   justify-items: center;
   padding: 35px;
@@ -232,6 +249,18 @@ h2 a{
 @media (max-width: 768px){
   .projets{
     grid-template-columns: 1fr 1fr;
+  }
+  .projet img{
+    border-radius: 70px !important;  
+  }
+}
+
+@media (max-width: 500px){
+  .projets{
+    grid-template-columns: 1fr 
+  }
+  .projet img{
+    border-radius: 67px !important;  
   }
 }
 
@@ -363,17 +392,29 @@ h2 a{
   align-items: center;
 }
 
+.modal-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0); /* Fond sombre */
+  z-index: 1006;
+  cursor: pointer;
+} 
+
 .modal img {
   max-width: 90% !important;
   max-height: 90% !important;
   display: block;
   position: relative;
   border-radius: 0% !important;
+  z-index: 1000;
 }
 
 .modal img .page-projet3 {
-  max-width: 90vw;  
-  max-height: 90vh; 
+  max-width: 115%;  
+  max-height: 115%; 
   object-fit: contain; 
   transition: transform 0.3s ease; 
 }
@@ -390,32 +431,68 @@ h2 a{
   align-items: center;
 }
 
-
 .modal-content {
-  display: inline-block;
+  display: flex;
   position: relative; /* Nécessaire pour positionner la croix par rapport à ce conteneur */
-  width: fit-content; /* Ajuste la largeur en fonction de l'image */
-  height: fit-content; /* Ajuste la hauteur en fonction de l'image */
+  max-width: 100% !important;
+  max-height: 100% !important;
+  align-items:  center;
+  justify-content: center;
+  z-index: 1001;
+  width: fit-content !important;
+  height: fit-content !important;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.modal-content img {
+  max-width: 70% !important;
+  max-height: 70% !important;
+}
+
+.modal-content img.grand {
+  max-width: 47% !important;
+  max-height: 47% !important;
+}
+
+.modal-content img.grand2 {
+  max-width: 62% !important;
+  max-height: 62% !important;
+}
+
+.modal-content img.petit {
+  max-width: 130% !important;
+  max-height: 130% !important;
+}
+
+.close{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 10px;
+  color: white;
+  cursor: pointer;
+  z-index: 1003;
 }
 
 .close img{
-  width: 100px;  /* Assurez-vous qu'elle a une taille appropriée */
-  height: 100px; /* Assurez-vous qu'elle a une hauteur appropriée */
+  width: 10px;  /* Assurez-vous qu'elle a une taille appropriée */
+  height: 10px; /* Assurez-vous qu'elle a une hauteur appropriée */
   display: inline-block;
   cursor: pointer;
 }
 
 .modal .close {
   position: absolute;
-  top: 80px;
-  right: 40px; 
-  font-size: 70px;
+  top: 0%;
+  right: 8%; 
+  font-size: 55px;
   font-weight: 200;
   color: rgb(255, 255, 255);
   cursor: pointer;
   background-color: transparent;
   border: none;
-  z-index: 100;
+  z-index: 1003;
 }
 
 .modal-checkbox {
@@ -425,6 +502,53 @@ h2 a{
 /* Affiche la modale quand la checkbox est cochée */
 .modal-checkbox:checked + .modal {
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 768px){
+  .page-projet{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 500px){
+  .page-projet{
+    grid-template-columns: 1fr;
+    justify-items: center;
+    display: grid;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+  }
+  .image-container-1,
+  .image-container-2,
+  .image-container-3 {
+    grid-row: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+  }
+
+  .image-container-1 img,
+  .image-container-2 img,
+  .image-container-3 img {
+    max-width: 90%; /* Limite également la hauteur */
+    object-fit: contain; 
+    border-radius: 10px; 
+  }
+
+  .sub-column {
+    grid-column: span 2; 
+    align-items: center;
+    justify-content: center;
+  }
+
+  .text-container {
+    grid-row: 2; 
+  }
 }
 
 .page-projet{
@@ -507,11 +631,6 @@ height: auto;
   display: inline-block;
 }
 
-@media (max-width: 768px){
-  .page-projet{
-    grid-template-columns: 1fr;
-  }
-}
 
 .page-projet img{
   max-width: 100%;
@@ -551,7 +670,6 @@ height: auto;
 }
 
 .text-container{
-  
   display: block;
   align-self: start;
   position: sticky;
@@ -576,7 +694,7 @@ font-size: 30px;
 font-size: clamp(15px, 5vw, 30px);
   color: #2647a4;
   margin: 0px;
-  margin-left: 20px;
+  margin-left: 0px;
 }
 
 .page-projet3 h3{
@@ -584,9 +702,8 @@ font-size: clamp(15px, 5vw, 30px);
   font-size: clamp(15px, 5vw, 30px);
     color: #2647a4;
     margin: 0px;
-    margin-left: 20px;
+    margin-left: 0px;
   }
-
 
 .page-projet h4{
   font-size: 20px;
@@ -596,7 +713,7 @@ font-size: clamp(15px, 5vw, 30px);
   padding-top: 10px;
   padding-bottom: 0px;
   margin: 0px;
-  margin-left: 30px;
+  margin-left: 0px;
 }
 
 .page-projet3 h4{
@@ -607,7 +724,7 @@ font-size: clamp(15px, 5vw, 30px);
   padding-top: 10px;
   padding-bottom: 0px;
   margin: 0px;
-  margin-left: 30px;
+  margin-left: 0px;
 }
 
 .page-projet h5{
@@ -615,10 +732,10 @@ font-size: clamp(15px, 5vw, 30px);
   font-size: clamp(5px, 5vw, 16px);
   color: #bdbdbd;
   padding: 0px;
-  padding-top: 0px;
+  padding-top: 3px;
   padding-bottom: 0px;
   margin: 0px;
-  margin-left: 30px;
+  margin-left: 0px;
 }
 
 .page-projet3 h5{
@@ -626,17 +743,17 @@ font-size: clamp(15px, 5vw, 30px);
   font-size: clamp(5px, 5vw, 16px);
   color: #bdbdbd;
   padding: 0px;
-  padding-top: 0px;
+  padding-top: 3px;
   padding-bottom: 0px;
   margin: 0px;
-  margin-left: 30px;
+  margin-left: 0px;
 }
 
 .page-projet p{
   font-family: "Epilogue", serif;
   font-optical-sizing: auto;
+  font-style: normal;
   font-weight: 600;
-  font-style: normal; 
   font-size: 16px;
   font-size: clamp(10px, 5vw, 16px);
   color: #959595;
@@ -644,7 +761,7 @@ font-size: clamp(15px, 5vw, 30px);
   padding-top: 20px;
   padding-bottom: 20px;
   margin: 0px;
-  margin-left: 30px;
+  margin-left: 0px;
 }
 
 .page-projet3 p{
@@ -659,7 +776,11 @@ font-size: clamp(15px, 5vw, 30px);
   padding-top: 20px;
   padding-bottom: 20px;
   margin: 0px;
-  margin-left: 30px;
+  margin-left: 0px;
+}
+
+.italic{
+  font-style: italic;
 }
 
 .main-column {
@@ -713,6 +834,7 @@ li{
   font-size: 16px;
   font-size: clamp(10px, 5vw, 16px);
   color: #959595;
+  margin-left: 10px;
 }
 
 .img-border{
@@ -798,6 +920,8 @@ li{
   align-items: center;
 }
 
+
+
 .page-a-propos .text-container3{
   grid-column: 2;
   grid-row: 3;
@@ -824,9 +948,27 @@ li{
   gap: 1rem;
 }
 
+@media (max-width: 768px) {
+  .page-a-propos {
+    grid-template-columns: 1fr; 
+    padding: 10px;
+  }
+  .page-a-propos .text-container,
+  .page-a-propos .text-temporaire,
+  .page-a-propos .text-container2,
+  .page-a-propos .text-container3,
+  .page-a-propos .text-container4 {
+    grid-column: 1; 
+    grid-row: auto; 
+    width: 100%; 
+    margin: 0 auto; 
+    border: 3px solid #2de8b6;
+  }
+}
+
 .page-a-propos h3{
   font-size: 30px;
-  font-size: clamp(15px, 5vw, 30px);
+  font-size: clamp(14px, 5vw, 30px);
   color: #2647a4;
   padding: 0px;
   padding-top: 5px;
@@ -836,6 +978,7 @@ li{
 
 .page-a-propos p{
   font-size: 17px;
+  font-size: clamp(14px, 5vw, 17px);
   font-weight: 500;
   color: #959595;
   padding: 0px;
@@ -848,6 +991,7 @@ li{
 
 .page-a-propos li{
   font-size: 17px;
+  font-size: clamp(14px, 5vw, 17px);
   font-weight: 500;
   color: #959595;
   padding: 0px;
@@ -859,6 +1003,8 @@ li{
 
 .page-a-propos titre{
   font-size: 17px;
+  font-size: clamp(14px, 5vw, 17px);
+  font-weight: 800;
   color: #2647a4;
   padding: 0px;
   display: grid;
@@ -875,8 +1021,7 @@ li{
 }
 
 .contact{
-  display: grid;
-  margin: 0 auto;
+  display: fit-content;
   background: #ffffff;
   grid-template-columns: 1fr ; 
   gap: 0px;
@@ -884,30 +1029,38 @@ li{
   margin: 0px;
   justify-content: center;
   margin-bottom: 0px;
-  width: 100%;
+  margin-top: 140px;
+  text-align: center;
+  align-items: center;
 }
 
 .contact .text-container{
+  display: inline-block;
   border-radius: 50px;
   border: 4px solid #2de8b6;
-  width: 100%;
   margin: 0px;
   margin-bottom: 30px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .contact h3{
-  font-size: 22px;
-  font-size: clamp(15px, 5vw, 22px);
+  font-size: 20px;
+  font-weight: 800;
+  font-size: clamp(15px, 5vw, 20px);
   color: #2647a4;
   padding: 0px;
   padding-top: 5px;
-  padding-bottom: 35px;
+  padding-bottom: 25px;
   margin: 0px;
 }
 
 .contact p{
-  font-size: 17px;
+  font-size: 16px;
+  font-size: clamp(13px, 5vw, 16px);
   color: #959595;
+  font-weight: 600;
   padding: 0px;
   padding-top: 5px;
   padding-bottom: 0px;

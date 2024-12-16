@@ -4,22 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio Margot Petitier-Chomaille</title>
+  <!-- meta description -->
   <meta name="description" content="Portfolio de Margot Petitier-Chomaille, designer graphique.">
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@800&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
-  <link rel="icon" href="svg/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+<link rel="icon" href="svg/favicon.svg" type="image/svg+xml">
 </head>
+<div id="top"></div>
 <body>
   <header class="header">
+    <!-- https://jenseign.com/le-h1-logo/ -->
+     <!-- <h1>Margot</h1>
+     <h1>Petitier-Chomaille</h1> -->
+    
     <nav class="header-container">
       <h2><a href="a-propos.html">À propos</a></h2>
-      <h1><a href="index.html">Margot Petitier-Chomaille</a></h1>
+      <h1> <a href="index.html">Margot Petitier-Chomaille</a></h1>
       <div class="first-row">
-        <h2><a href="contact.html">Contact</a></h2>
+        <nav class="header-container"></nav>
+        
+        <h2> <a href="contact.html">Contact</a></h2>
       </div>
     </nav>
   </header>
@@ -32,10 +44,13 @@
           <label for="modal1">
             <img src="transparence/transparence02.jpg" alt="Photographie portrait bleu">
           </label>
-          <input type="checkbox" id="modal1" class="modal-checkbox">
+          <input type="checkbox"  id="modal1" class="modal-checkbox">
           <div class="modal">
+          <div class="modal-background"></div>
+            <div class="modal-content">
             <label for="modal1" class="close"> &times;</label>
             <img src="transparence/transparence02.jpg" alt="Photographie portrait bleu agrandie">
+            </div>
           </div>
 
           <label for="modal2">
@@ -43,17 +58,23 @@
           </label>
           <input type="checkbox" id="modal2" class="modal-checkbox">
           <div class="modal">
+          <div class="modal-background"></div>
+          <div class="modal-content">
             <label for="modal2" class="close">&times;</label>
             <img src="transparence/transparence03.jpg" alt="photographie rideau">
           </div>
+        </div>
 
           <label for="modal3">
             <img src="transparence/transparence05.jpg" alt="Photographie portrait pois">
           </label>
           <input type="checkbox" id="modal3" class="modal-checkbox">
           <div class="modal">
+            <div class="modal-background"></div>
+          <div class="modal-content">
             <label for="modal3" class="close">&times;</label>
             <img src="transparence/transparence05.jpg" alt="Photographie portrait pois agrandie">
+          </div>
           </div>
         </div>
       </div>
@@ -64,8 +85,11 @@
           </label>
           <input type="checkbox" id="modal4" class="modal-checkbox">
           <div class="modal">
+            <div class="modal-background"></div>
+          <div class="modal-content">
             <label for="modal4" class="close">&times;</label>
             <img src="transparence/transparence01.jpg" alt="Photographie portrait polystyrène">
+          </div>
           </div>
 
           <label for="modal5">
@@ -73,8 +97,11 @@
           </label>
           <input type="checkbox" id="modal5" class="modal-checkbox">
           <div class="modal">
+            <div class="modal-background"></div>
+          <div class="modal-content">
             <label for="modal5" class="close">&times;</label>
             <img src="transparence/transparence04.jpg" alt="Photographie portrait voile agrandie">
+            </div>
           </div>
         </div>
       </div>
@@ -86,5 +113,25 @@
       <p>Photographies recherchant une entente entre la volonté de cacher et de montrer en dévoilant.</p>
     </div>
   </div>
+
+  <script>
+    // Attendre que le DOM soit complètement chargé avant d'exécuter le script
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log("Le DOM est chargé !");
+      
+      const modalBackgrounds = document.querySelectorAll('.modal-background');
+      console.log("Modal backgrounds trouvés :", modalBackgrounds);
+      
+      modalBackgrounds.forEach(function(background) {
+        background.addEventListener('click', function() {
+          console.log("Fond cliqué !");
+          const modalCheckbox = background.closest('.modal').previousElementSibling;
+          if (modalCheckbox) {
+            modalCheckbox.checked = false;
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
