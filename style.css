@@ -4,17 +4,16 @@
     background-color: none;
 } 
 
-body{
-    background-color: #ffffff;
-    font-family: "Epilogue", sans-serif;
-      margin: 0; /* pour éviter les marges par défaut du navigateur */
-    line-height: 1.5;
-    font-optical-sizing: auto;
-      font-weight: 800
-      font-style: normal;
-      font-optical-sizing: auto;
-    }
-
+body {
+  background-color: #ffffff;
+  font-family: "Epilogue", sans-serif;
+  margin: 0; /* pour éviter les marges par défaut du navigateur */
+  line-height: 1.5;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  font-optical-sizing: auto;
+}
 
 img{
     max-width: 100%; /* pour que les images ne dépassent pas de leur conteneur */
