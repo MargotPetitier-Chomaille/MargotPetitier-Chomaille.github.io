@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Margot Petitier-Chomaille</title>
+  <!-- meta description -->
+  <meta name="description" content="Portfolio de Margot Petitier-Chomaille, designer graphique.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+<link rel="icon" href="svg/favicon.svg" type="image/svg+xml">
+</head>
+<div id="top"></div>
+<body>
+  <header class="header">
+    <!-- https://jenseign.com/le-h1-logo/ -->
+     <!-- <h1>Margot</h1>
+     <h1>Petitier-Chomaille</h1> -->
+    
+    <nav class="header-container">
+      <h2><a href="a-propos.html">À propos</a></h2>
+      <h1> <a href="index.html">Margot Petitier-Chomaille</a></h1>
+      <div class="first-row">
+        <nav class="header-container"></nav>
+        
+        <h2> <a href="contact.html">Contact</a></h2>
+      </div>
+    </nav>
+  </header>
+
+  <div class="page-projet">
+    <div class="main-column">
+      <div class="sub-column">
+        <div class="image-container-1">
+          <!-- Modales basées sur des checkboxes -->
+          <label for="modal1">
+            <img src="platsn/platsnv1.jpg" alt="poster typographique">
+          </label>
+          <input type="checkbox" id="modal1" class="modal-checkbox">
+          <div class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+            <label for="modal1" class="close"> &times;</label>
+            <img src="platsn/platsnv1.jpg" alt="couverture magazine agrandie">
+          </div>
+        </div>
+
+          <label for="modal2">
+            <img src="platsn/platsnv3.jpg" alt="poster typographique">
+          </label>
+          <input type="checkbox" id="modal2" class="modal-checkbox">
+          <div class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+            <label for="modal2" class="close">&times;</label>
+            <img src="platsn/platsnv3.jpg" alt="poster typographique agrandi">
+          </div>
+        </div>
+        </div>
+      </div>
+      <div class="sub-column">
+        <div class="image-container-2">
+          <label for="modal4">
+            <img src="platsn/platsnv2.jpg" alt="poster typographique">
+          </label>
+          <input type="checkbox" id="modal4" class="modal-checkbox">
+          <div class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+            <label for="modal4" class="close">&times;</label>
+            <img src="platsn/platsnv2.jpg" alt="poster typographique agrandi">
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-container">
+      <h3>Platsn</h3>
+      <h4>2024</h4>
+      <h5>40×60 cm</h5>
+      <p>"Platsn" signifie "exploser émotionnellement en yiddish". Voici trois propositions de posters typographiques illustrant ce mot.</p>
+      <p>La première proposition se comporte comme une explosion de couleur. L'action de déchirer les papiers suggère la violence d'une "explosion" ainsi que le bousculement des lettres. </p>
+      <p>Pour la deuxième proposition, les lettres en papiers sont la métaphore du corps traversé par des émotions confuses, qui s'emmêlent. </p>
+      <p>La troisième proposition explore le mot "Platsn" de façon joyeuse et festive, telle une explosion de joie.</p>
+    </div>
+  </div>
+
+  <script>
+    // Attendre que le DOM soit complètement chargé avant d'exécuter le script
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log("Le DOM est chargé !");
+      
+      const modalBackgrounds = document.querySelectorAll('.modal-background');
+      console.log("Modal backgrounds trouvés :", modalBackgrounds);
+      
+      modalBackgrounds.forEach(function(background) {
+        background.addEventListener('click', function() {
+          console.log("Fond cliqué !");
+          const modalCheckbox = background.closest('.modal').previousElementSibling;
+          if (modalCheckbox) {
+            modalCheckbox.checked = false;
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
