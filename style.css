@@ -134,6 +134,7 @@ h2 a{
   align-items: center;
   padding: 20px 35px;
   background: #ffffff;
+  border-top: 4px solid #2de8b6;
 }
 
 .droits {
@@ -236,6 +237,7 @@ h2 a{
   }
 }
 
+
 .projets{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr ; 
@@ -263,6 +265,46 @@ h2 a{
     border-radius: 67px !important;  
   }
 }
+
+.bandeau {
+  position: relative;
+  width: 160px; /* Largeur fixe */
+  height: 35px; /* Hauteur fixe */
+  display: flex;
+  justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement */
+}
+
+.svg-container {
+  position: relative; /* Permet aux enfants de se superposer */
+  width: 120px; /* Taille des SVG */
+  height: auto;
+}
+
+.svg-default,
+.svg-hover {
+  position: absolute; /* Maintient les SVG dans le flux normal */
+  width: 120px; /* Taille identique pour les SVG */
+  height: auto;
+  transition: opacity 0.3s ease; /* Animation fluide */
+  top: -55px;
+  left: 30px;  
+  z-index: 999;
+}
+
+.svg-hover {
+   /* Ajuste la superposition avec la hauteur des SVG */
+  opacity: 0; /* Masque le SVG de survol par défaut */
+}
+
+.bandeau:hover .svg-default {
+  opacity: 0; /* Masque le SVG par défaut au survol */
+}
+
+.bandeau:hover .svg-hover {
+  opacity: 1; /* Affiche le SVG au survol */
+}
+
 
 .projet{
   display: flex;
@@ -306,6 +348,20 @@ h2 a{
 .projet img:hover {
   background-color: var(--hover-color); /* Applique la couleur de fond lors du survol */
  /*  transition: background-color 0.3s ease; */  /* Transition douce pour l'effet */
+}
+
+.projets .projet:nth-last-of-type(11) img {
+  border: 3pt solid #719ee8;
+}
+.projets .projet:nth-last-of-type(11) img:hover {
+  background-color: #719ee8;
+}
+
+.projets .projet:nth-last-of-type(10) img {
+  border: 3pt solid #da1515;
+}
+.projets .projet:nth-last-of-type(10) img:hover {
+  background-color: #da1515;
 }
 
 .projets .projet:nth-last-of-type(9) img {
@@ -867,6 +923,47 @@ li{
 .projets{
   grid-auto-flow: row dense; /* pour boucher les trous*/
 }
+
+.galerie {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr ;  
+  gap: 40px;
+  padding: 10px;
+  justify-content: center;
+  margin: 24px;
+}
+
+.galerie img {
+  max-width: 95%;
+  max-height: 95%;
+  margin: 0px;
+  padding: 0px;
+}
+
+.galerie .photographies.paysage {
+  grid-column: span 2; 
+}
+
+.galerie .photographies.paysage img {
+  object-fit: cover;  /* L'image remplira tout l'espace disponible sans déformation */
+}
+
+.double {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  gap: 40px;
+  padding: 10px;
+  justify-content: center;
+  margin: 24px;
+}
+
+.double .img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover; 
+  grid-column: span 1;
+}
+
 
 .page-a-propos{
   display: grid;
