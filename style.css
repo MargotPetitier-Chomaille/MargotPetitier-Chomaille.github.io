@@ -709,7 +709,6 @@ height: auto;
 }
 
 .image-container-2{
-  display: grid;
   align-self: start;
   padding: 0px;
   justify-content: center;
