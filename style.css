@@ -306,7 +306,7 @@ h2 a{
 
 
 .projet{
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   align-items: center;
   background-color: #ffffff00;
