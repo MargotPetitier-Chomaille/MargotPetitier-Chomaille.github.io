@@ -349,6 +349,13 @@ h2 a{
  /*  transition: background-color 0.3s ease; */  /* Transition douce pour l'effet */
 }
 
+.projets .projet:nth-last-of-type(12) img {
+  border: 3pt solid #d39d54;
+}
+.projets .projet:nth-last-of-type(12) img:hover {
+  background-color: #d39d54;
+}
+
 .projets .projet:nth-last-of-type(11) img {
   border: 3pt solid #719ee8;
 }
