@@ -350,10 +350,10 @@ h2 a{
 }
 
 .projets .projet:nth-last-of-type(12) img {
-  border: 3pt solid #d39d54;
+  border: 3pt solid #b9512c;
 }
 .projets .projet:nth-last-of-type(12) img:hover {
-  background-color: #d39d54;
+  background-color: #b9512c;
 }
 
 .projets .projet:nth-last-of-type(11) img {
@@ -838,7 +838,7 @@ font-size: clamp(15px, 5vw, 30px);
   margin: 0px;
   margin-left: 0px;
 }
-``
+
 
 .italic{
   font-style: italic;
@@ -925,16 +925,17 @@ li{
   }
 }
 
+
 .projets{
   grid-auto-flow: row dense; /* pour boucher les trous*/
 }
+
 
 .galerie {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr ;  
   gap: 40px;
   padding: 10px;
-  justify-content: center;
   margin: 24px;
 }
 
@@ -943,6 +944,8 @@ li{
   max-height: 95%;
   margin: 0px;
   padding: 0px;
+  align-items: center;
+  justify-content: center;
 }
 
 .galerie .photographies.paysage {
@@ -967,6 +970,46 @@ li{
   max-height: 100%;
   object-fit: cover; 
   grid-column: span 1;
+}
+
+@media screen and (max-width: 768px) {
+  .galerie {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+    margin: 12px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .double {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 10px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .galerie .photographies.paysage {
+    grid-column: span 2;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .galerie {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin: 8px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .double {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin: 6px;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .page-a-propos{
