@@ -357,7 +357,7 @@ h2 a{
 }
 
 .projets .projet:nth-last-of-type(13) img {
-  border: 3pt solid #1d1c1a;
+  border: 4pt solid #1d1c1a;
 }
 .projets .projet:nth-last-of-type(13) img:hover {
   background-color: #1d1c1a;
