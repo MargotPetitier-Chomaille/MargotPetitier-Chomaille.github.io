@@ -776,6 +776,25 @@ height: auto;
   display: inline-block;
 }
 
+.text-container2{
+  display: block;
+  align-self: start;
+  position: relative;
+  top : 10px;
+  width: 80%;
+  gap: 0px;
+  padding: 0px;
+  justify-content: center;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin: 20px;
+
+  padding: 30px; 
+  border: 3px solid #2de8b6;  
+  border-radius: 60px;  
+  display: inline-block;
+}
+
 
 .page-projet h3{
 font-size: 30px;
